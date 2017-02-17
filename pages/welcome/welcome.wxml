@@ -1,0 +1,11 @@
+<!--wxml是编写小程序骨架的文件-->
+<!--div-->
+<view class="container">
+    <image class="user-avatar" src="/images/Iconf03.png"></image>
+    <text class="user-name">Hello,阿杰</text>
+    <!--只有Text包裹的文件才能在手机中长按选中-->
+    <view class="moto-container">
+        <text class="moto" bindtap="onTap">开启小程序之旅</text>
+        <!--bindtap 和和catchtap事件冒泡的区别-->
+    </view>
+</view>

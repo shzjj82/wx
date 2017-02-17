@@ -1,0 +1,30 @@
+<import src="post-item-template/post-item-template.wxml"/>
+<!--通过import的方式引入post-item-template.wxml文件-->
+<!--既支持绝对路径的方式引入也支持路径的方式引入-->
+<view>
+    <swiper vertical="{{false}}" indicator-dots="true" autoplay="ture" interval="5000">
+        <swiper-item>
+            <image src="/images/iqiyi.png"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/vr.png"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/wx.png"></image>
+        </swiper-item>
+    </swiper>
+    <block wx:for="{{posts_key}}"> 
+    <!--等同于angularjs的的ngrepeat 其中for-item中"item“可以省略 默认for循环下的每个为为item 每个index为index-->
+    <view catchtap="onPostTap" data-postId="{{item.postId}}">
+    <!--增加view 用于添加绑定事件-->
+    <!--以"data-属性名"的为自定义属性-->
+    <!--自定属性“-”会将后单词自动转换成为驼峰命名法 且除首字母外其他均会被改为小写-->
+        <template is="postItem" data="{{...item}}" />
+    </view>
+        
+        <!--通过在{{item}}前增加"..."可以使post-item-template.wxml中的的item不需要item前缀 特殊小技巧-->
+        <!--这边的的is对应的是post-item-template.wxml中的的name-->
+        <!--data=“{{item}}”对应的是是wx:for-item中的每个item-->
+        <!--post-item-template.wxml中的的item和和data="{{item}}" <block wx:for-item="item">中的的item三者必须一致才有作用-->
+    </block>
+</view>

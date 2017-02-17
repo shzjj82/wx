@@ -1,0 +1,11 @@
+@import "post-item-template/post-item-template.wxss";
+/*通过@import来引入模版化的的css文件 地址可以是绝对路径也可以是相对路径*/
+/*@import"路径"的方式来引入*/
+swiper{
+    height: 600rpx;
+    width: 100%;
+}
+swiper image{
+    height: 600rpx;
+    width: 100%;
+}
